@@ -9,4 +9,5 @@ buildNumber.properties
 .mvn/timing.properties
 nbproject
 node_modules
+.*
 

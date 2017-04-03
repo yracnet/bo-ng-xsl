@@ -4,7 +4,22 @@
 		<button >Crear</button>
 		<a href="Vericar">xxxx</a>
 	</legend>
-	{type:'panel', col:2}
+	<br/>
+	--------------------------------
+	<br/>
+	<input ui-layout="{col:4}" title="1er Apellido" ng-model="form.apellido"/>
+	<input ui-layout="{col:4}" title="2er Apellido" ng-model="form.apellido02"/>
+	<input ui-layout="{col:4}" title="2er Apellido" ng-model="form.apellido02"/>
+	<select ui-layout="{col:6}" title="Estado civil" ng-model="form.estadoCivil">
+		<option>Casado</option>
+		<option>Soltero</option>
+	</select>
+	<input ui-layout="{col:6}" placeholder="3er Casada"
+								ng-show="form.estadoCivil === 'Casado'"
+								ng-model="form.apellidoCasada"/>
+	<br/>
+	--------------------------------
+	<br/>
 	<span ui-layout="{col:4}" ng-model="form.config">
 		<input ui-layout="{col:4}" title="1er Apellido" ng-model="form.apellido"/>
 		<input ui-layout="{col:4}" title="2er Apellido" ng-model="form.apellido02"/>
@@ -13,18 +28,12 @@
 			<option>Casado</option>
 			<option>Soltero</option>
 		</select>
-		<select ui-layout="{col:6}" title="Estado civil" ng-model="form.estadoCivil">
-			<option>Casado</option>
-			<option>Soltero</option>
-		</select>
-		<select ui-layout="{col:6}" title="Estado civil" ng-model="form.estadoCivil">
-			<option>Casado</option>
-			<option>Soltero</option>
-		</select>
+		<input ui-layout="{col:6}" placeholder="3er Casada"
+									ng-show="form.estadoCivil === 'Casado'"
+									ng-model="form.apellidoCasada"/>
 	</span>
 </fieldset>
 <style type="text/css" >
-	
 	.form-horizontal .col-md-3 .input-group{
 		width: 100%;
 	}

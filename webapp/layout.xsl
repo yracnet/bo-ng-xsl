@@ -23,33 +23,31 @@
 		</span>
 	</xsl:template>
 	<xsl:template match="input[@ui-layout]">
+		<xsl:param name="with-label" select="true()"/>
+		<xsl:if test="$with-label">
+			<label class="control-label">
+				<xsl:copy-of select="@ng-hiden|@ng-show"/>
+				<xsl:value-of select="@placeholder|@title"/>
+			</label>
+		</xsl:if>
 		<div class="input-group">
 			<xsl:copy-of select="@ng-hiden|@ng-show"/>
-			<!--
-			<xsl:if test=".[@placeholder|@title]">
-				<span class="input-group-addon">
-					<xsl:value-of select="@placeholder|@title"/>
-				</span>
-			</xsl:if>
-			-->
-			<input type="{type}" class="form-control">
+			<input type="{type}" class="form-control col-md-3">
 				<xsl:copy-of select="@*"/>
 			</input>
-			
 			<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
 		</div>
 	</xsl:template>
 	<xsl:template match="select[@ui-layout]">
+		<xsl:param name="with-label" select="true()"/>
+		<xsl:if test="$with-label">
+			<label class="control-label">
+				<xsl:copy-of select="@ng-hiden|@ng-show"/>
+				<xsl:value-of select="@placeholder|@title"/>
+			</label>
+		</xsl:if>
 		<span class="input-group"> 
 			<xsl:copy-of select="@ng-hiden|@ng-show"/>
-			<!--
-			<xsl:if test=".[@placeholder|@title]">
-				<span class="input-group-addon">
-					<xsl:value-of select="@placeholder|@title"/>
-				</span>
-			</xsl:if>
-			-->
-			<!--input/-->
 			<a data-toggle="dropdown" href="#" class="form-control">
 				<span class="form-control-staticx">
 					{{<xsl:value-of select="@ng-model"/>}}
@@ -90,11 +88,14 @@
 	<xsl:template match="span[@ui-layout]">
 		<div class="row form-horizontal">
 			<xsl:for-each select="input|select|button">
-				<label class="col-sm-1 control-label">
+				<label class="col-md-1 control-label">
+					<xsl:copy-of select="@ng-hiden|@ng-show"/>
 					<xsl:value-of select="@placeholder|@title"/>
 				</label>
 				<div class="col-md-3">
-					<xsl:apply-templates select="."/>
+					<xsl:apply-templates select=".">
+						<xsl:with-param name="with-label" select="false()"/>
+					</xsl:apply-templates>
 				</div>
 			</xsl:for-each>
 		</div>
