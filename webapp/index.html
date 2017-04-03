@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+  <head>
+    <title>AngularJS Plunker</title>
+    <link rel="stylesheet" href="/build/jquery.css"/>
+    <link rel="stylesheet" href="/build/bootstrap.css"/>
+    <link rel="stylesheet" href="/build/angular.css"/>
+  </head>
+  <body ng-controller="MainCtrl">
+    RUN:<input type="checkbox" ng-model="$root.runXslt"/>
+    PAGE:<select ng-model="page">
+      <option>panel.html</option>
+      <option>form.html</option>
+      <option>none.html</option>
+      <option>tabs.html</option>
+    </select>
+    <button ng-click="refresh()">Refresh</button>
+    <input ng-model="name"/>
+    <p>Hello {{name}}!</p>
+    <div ng-include="pageInclude">
+      .....
+    </div>
+    <script src="/build/jquery.js"></script>
+    <script src="/build/bootstrap.js"></script>
+    <script src="/build/angular.js"></script>
+    <script src="/ctrls/core.js"></script>
+    <script src="/ctrls/main.js"></script>
+  </body>
+</html>

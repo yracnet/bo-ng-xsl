@@ -1,0 +1,66 @@
+var gulp = require('gulp');
+var browserSync = require('browser-sync').create();
+var sass = require('gulp-sass');
+var out = require('gulp-util');
+
+var conf = {
+	root: './',
+	
+	modules: {
+		src: '/modules',
+		target: '/webapp',
+		bootstrap: {
+			src: '/bootstrap/3.3.7',
+			target: '/build',
+			finalName: 'bootstrap',
+			task: ['sass']
+		},
+		angularjs: {
+			src: '/angularjs/1.5.8',
+			target: '/build',
+			finalName: 'angular',
+			task: ['js']
+		}
+	}
+};
+
+// Static Server + watching scss/html files
+gulp.task('serve', ['sass-bootstrap'], function () {
+
+	browserSync.init({
+		server: "./webapp"
+	});
+
+	for (var key in conf.modules) {
+		var config = conf.modules[key];
+		out.log("Configure Module[" + key + "] = " + config);
+		//var v = config.build || {};
+		//var developer = v.developer || [];
+		//var production = v.production || [];
+		//initConfig.build.developer = initConfig.build.developer.concat(developer);
+		//initConfig.build.production = initConfig.build.production.concat(production);
+	}
+	//gulp.watch("./__web/assets/bootstrap/assets/stylesheets/*.scss", ['sass-bootstrap']);
+	//gulp.watch("app/*.html").on('change', browserSync.reload);
+	var ext = ['html', 'xml', 'xsl', 'js', 'css'];
+	for (var i in ext) {
+		var watch = "./webapp/**/*." + ext[i];
+		out.log("watch:::[" + ext[i] + "] = " + watch);
+		gulp.watch(watch).on("change", browserSync.reload);
+	}
+});
+
+// Compile sass into CSS & auto-inject into browsers
+gulp.task('sass-bootstrap', function () {
+	/*
+		return gulp.src("app/scss/*.scss")
+		.pipe(sass())
+		.pipe(gulp.dest("app/css"))
+		.pipe(browserSync.stream());
+		/**/
+});
+
+
+
+gulp.task('default', ['serve']);
+

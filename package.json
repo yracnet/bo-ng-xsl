@@ -1,0 +1,15 @@
+{
+  "name": "bo-example",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Willyams yujra",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+	 "gulp-sass":"*",
+	 "gulp-util":"*"
+
+  }
+}

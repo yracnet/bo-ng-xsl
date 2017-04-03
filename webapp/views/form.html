@@ -1,0 +1,21 @@
+<div>
+	<input ui-layout="{col:4}" title="1er Apellido" ng-model="form.apellido"/>
+	<input ui-layout="{col:4}" title="2er Apellido" ng-model="form.apellido02"/>
+	<select ui-layout="{col:6}" title="Estado civil" ng-model="form.estadoCivil">
+		<option>Casado</option>
+		<option>Soltero</option>
+	</select>
+	<input ui-layout="{col:6}" placeholder="3er Casada"
+								ng-show="form.estadoCivil === 'Casado'"
+								ng-model="form.apellidoCasada"/>
+	<input ui-layout="{col:6}" placeholder="Fecha Nacimiento" type="date" ng-model="form.fechaNacimiento"/>
+
+	<input ui-layout="{col:4}" ng-model="form.number"/>
+	<input ui-layout="{col:4}" ng-model="form.date"/>
+	<input ui-layout="{col:4}" ng-model="form.time"/>
+	<input ui-layout="{col:4}" placeholder="apellido" ng-model="form.text"/>
+	<input ui-layout="{col:6}" placeholder="direccion" ng-model="form.number"/>
+</div>
+<code>
+	{{form|| json}}
+</code>
