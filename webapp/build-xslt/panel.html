@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<div>
+<fieldset id="1">
+	
+	<br/>
+	--------------------------------
+	<br/>
+	<label class="control-label">1er Apellido</label><div class="input-group"><input type="" class="form-control col-md-3" ui-layout="{col:4}" title="1er Apellido" ng-model="form.apellido"/><span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"/></div>
+	<label class="control-label">2er Apellido</label><div class="input-group"><input type="" class="form-control col-md-3" ui-layout="{col:4}" title="2er Apellido" ng-model="form.apellido02"/><span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"/></div>
+	<label class="control-label">2er Apellido</label><div class="input-group"><input type="" class="form-control col-md-3" ui-layout="{col:4}" title="2er Apellido" ng-model="form.apellido02"/><span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"/></div>
+	<label class="control-label">Estado civil</label><span class="input-group"><a data-toggle="dropdown" href="#" class="form-control"><span class="form-control-staticx">
+					{{form.estadoCivil}}
+					<span class="caret"/></span></a><span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"/><select size="10" class="dropdown-menu" ui-layout="{col:6}" title="Estado civil" ng-model="form.estadoCivil"><option>Casado</option><option>Soltero</option></select></span>
+	<label class="control-label" ng-show="form.estadoCivil === 'Casado'">3er Casada</label><div class="input-group" ng-show="form.estadoCivil === 'Casado'"><input type="" class="form-control col-md-3" ui-layout="{col:6}" placeholder="3er Casada" ng-show="form.estadoCivil === 'Casado'" ng-model="form.apellidoCasada"/><span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"/></div>
+	<br/>
+	--------------------------------
+	<br/>
+	<div class="row form-horizontal"><label class="col-md-1 control-label">1er Apellido</label><div class="col-md-3"><div class="input-group"><input type="" class="form-control col-md-3" ui-layout="{col:4}" title="1er Apellido" ng-model="form.apellido"/><span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"/></div></div><label class="col-md-1 control-label">2er Apellido</label><div class="col-md-3"><div class="input-group"><input type="" class="form-control col-md-3" ui-layout="{col:4}" title="2er Apellido" ng-model="form.apellido02"/><span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"/></div></div><label class="col-md-1 control-label">2er Apellido</label><div class="col-md-3"><div class="input-group"><input type="" class="form-control col-md-3" ui-layout="{col:4}" title="2er Apellido" ng-model="form.apellido02"/><span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"/></div></div><label class="col-md-1 control-label">Estado civil</label><div class="col-md-3"><span class="input-group"><a data-toggle="dropdown" href="#" class="form-control"><span class="form-control-staticx">
+					{{form.estadoCivil}}
+					<span class="caret"/></span></a><span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"/><select size="10" class="dropdown-menu" ui-layout="{col:6}" title="Estado civil" ng-model="form.estadoCivil"><option>Casado</option><option>Soltero</option></select></span></div><label class="col-md-1 control-label" ng-show="form.estadoCivil === 'Casado'">3er Casada</label><div class="col-md-3"><div class="input-group" ng-show="form.estadoCivil === 'Casado'"><input type="" class="form-control col-md-3" ui-layout="{col:6}" placeholder="3er Casada" ng-show="form.estadoCivil === 'Casado'" ng-model="form.apellidoCasada"/><span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"/></div></div></div>
+</fieldset>
+<style type="text/css">
+	.form-horizontal .col-md-3 .input-group{
+		width: 100%;
+	}
+</style>
+<code>
+	{{form|| json}}
+</code>
+
+</div>

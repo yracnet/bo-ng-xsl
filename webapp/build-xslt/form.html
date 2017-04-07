@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<div>
+	<label class="control-label">1er Apellido</label><div class="input-group"><input type="" class="form-control col-md-3" ui-layout="{col:4}" title="1er Apellido" ng-model="form.apellido"/><span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"/></div>
+	<label class="control-label">2er Apellido</label><div class="input-group"><input type="" class="form-control col-md-3" ui-layout="{col:4}" title="2er Apellido" ng-model="form.apellido02"/><span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"/></div>
+	<label class="control-label">Estado civil</label><span class="input-group"><a data-toggle="dropdown" href="#" class="form-control"><span class="form-control-staticx">
+					{{form.estadoCivil}}
+					<span class="caret"/></span></a><span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"/><select size="10" class="dropdown-menu" ui-layout="{col:6}" title="Estado civil" ng-model="form.estadoCivil"><option>Casado</option><option>Soltero</option></select></span>
+	<label class="control-label" ng-show="form.estadoCivil === 'Casado'">3er Casada</label><div class="input-group" ng-show="form.estadoCivil === 'Casado'"><input type="" class="form-control col-md-3" ui-layout="{col:6}" placeholder="3er Casada" ng-show="form.estadoCivil === 'Casado'" ng-model="form.apellidoCasada"/><span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"/></div>
+	<label class="control-label">Fecha Nacimiento</label><div class="input-group"><input type="date" class="form-control col-md-3" ui-layout="{col:6}" placeholder="Fecha Nacimiento" ng-model="form.fechaNacimiento"/><span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"/></div>
+
+	<label class="control-label"/><div class="input-group"><input type="" class="form-control col-md-3" ui-layout="{col:4}" ng-model="form.number"/><span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"/></div>
+	<label class="control-label"/><div class="input-group"><input type="" class="form-control col-md-3" ui-layout="{col:4}" ng-model="form.date"/><span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"/></div>
+	<label class="control-label"/><div class="input-group"><input type="" class="form-control col-md-3" ui-layout="{col:4}" ng-model="form.time"/><span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"/></div>
+	<label class="control-label">apellido</label><div class="input-group"><input type="" class="form-control col-md-3" ui-layout="{col:4}" placeholder="apellido" ng-model="form.text"/><span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"/></div>
+	<label class="control-label">direccion</label><div class="input-group"><input type="" class="form-control col-md-3" ui-layout="{col:6}" placeholder="direccion" ng-model="form.number"/><span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"/></div>
+</div>
